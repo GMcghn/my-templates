@@ -1,0 +1,20 @@
+
+
+{
+  "autoUpdatesChannel": "latest",
+  "voiceEnabled": false,
+  "theme": "light",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ ! -f .gitignore ] || ! file .gitignore | grep -q UTF-8; then echo 'WARN: .gitignore missing or wrong encoding'; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
